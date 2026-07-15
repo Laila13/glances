@@ -26,7 +26,7 @@ Atualmente, o Glances mostra o consumo de disco reativo. Se um processo começar
 ## 4. Mapa de Empatia (Focado em Tiago)
 * **O que pensa e sente?** "Preciso manter a estabilidade dos servidores. Detesto monitoramentos complexos que exigem dashboards gigantescos para ver o óbvio."
 * **O que vê?** Alertas vermelhos piscando no terminal quando já é tarde demais.
-* **O que fala e faz?** Usa o Glances no terminal via SSH diariamente por ser leve, mas sente falta de inteligência preventiva[cite: 1].
-* **O que ouve?** Do chefe: "Por que o sistema caiu de novo por falta de espaço em disco se temos monitoramento?"[cite: 1]
-* **Dores:** Falta de tempo para analisar tendências de consumo de dados manualmente[cite: 1].
-* **Necessidades:** Automação simples e predições baseadas no consumo atual[cite: 1].
+* **O que fala e faz?** Usa o Glances no terminal via SSH diariamente por ser leve, mas sente falta de inteligência preventiva.
+* **O que ouve?** Do chefe: "Por que o sistema caiu de novo por falta de espaço em disco se temos monitoramento?"
+* **Dores:** Falta de tempo para analisar tendências de consumo de dados manualmente.
+* **Necessidades:** Automação simples e predições baseadas no consumo atual.
