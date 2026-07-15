@@ -1,0 +1,22 @@
+# Trabalho Prático: Open Source Discovery & Design (Glances)
+
+Trabalho prático desenvolvido para a disciplina CSI412 - Engenharia de Software I (UFOP - Semestre 2026/1).
+
+## 👥 Integrantes
+* Integrante 1 (Desenvolvedor no PR) - [Nome / Matrícula][cite: 1]
+* Integrante 2 (Revisor no PR) - [Nome / Matrícula][cite: 1]
+
+## 🎯 Escopo do Projeto
+Este projeto analisa o software livre **Glances** e propõe uma extensão mínima viável (MVP): um **Módulo Preditivo de Esgotamento de Disco (Predictive Disk Space)**, que calcula em quantas horas o armazenamento atingirá sua capacidade máxima[cite: 1].
+
+## 📁 Estrutura de Pastas do Trabalho
+O repositório foi organizado rigorosamente conforme as especificações exigidas[cite: 1]:
+* [`/discovery`](./discovery): Descrição do sistema, Jobs to Be Done (JTBD), Personas e Mapa de Empatia[cite: 1].
+* [`/requirements`](./requirements): Definição do MVP, `backlog.md` (histórias de usuário) e `testes.md` (cenários)[cite: 1].
+* [`/diagrams`](./diagrams): Diagramas UML textuais em Mermaid (Classes, Sequência e Componentes)[cite: 1].
+* [`/ai-usage`](./ai-usage): Relatório de uso crítico de Inteligência Artificial e tomadas de decisão[cite: 1].
+
+## 🚀 Como Executar o MVP Simulado
+Para validar a lógica matemática de predição temporal por trás do MVP, execute[cite: 1]:
+```bash
+python predictive_engine.py
