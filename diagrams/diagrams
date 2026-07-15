@@ -70,3 +70,27 @@ graph TD
     DiskPlugin --> |Analisa Amostras Temporais| PredictiveModule
     DiskPlugin --> |Busca Métricas Cruas| PSUtil
     PSUtil --> |Queries C / Syscalls| DiskDrivers
+graph TD
+    subgraph Glances_Core [Componentes Core do Glances]
+        Core[Glances Core Engine]
+        Plugins[Gerenciador de Plugins]
+        Core --> Plugins
+    end
+
+    subgraph Predictive_Extension [Módulo Preditivo - Nosso MVP]
+        DiskPlugin[Plugin de Disco]
+        PredictiveEngine[Motor Preditivo]
+        SampleCollector[Coletor de Amostras de Armazenamento]
+        
+        DiskPlugin --> PredictiveEngine
+        PredictiveEngine --> SampleCollector
+    end
+
+    subgraph OS [Nível do Sistema Operacional]
+        PSUtil[Biblioteca psutil]
+        Storage[Armazenamento de Disco]
+        PSUtil -.-> Storage
+    end
+
+    Plugins --> DiskPlugin
+    DiskPlugin --> PSUtil
