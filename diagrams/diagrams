@@ -1,0 +1,23 @@
+# Diagramas de Modelagem UML Textual
+
+## 1. Diagrama de Sequência
+```mermaid
+sequenceDiagram
+    autonumber
+    actor SysAdmin as Usuário/Terminal
+    participant Main as GlancesCore
+    participant Plugin as DisksPlugin
+    participant Calc as PredictiveEngine
+    participant OS as Sistema Operacional (psutil)
+
+    SysAdmin->>Main: Inicia o Glances
+    loop A cada ciclo de atualização (refresh rate)
+        Main->>Plugin: update()
+        Plugin->>OS: Coleta uso atual do disco (bytes usados, timestamp)
+        OS-->>Plugin: Retorna (usado: 75GB, total: 100GB)
+        Plugin->>Calc: calculaTendencia(historicoMetricas)
+        Note over Calc: Aplica Regressão Linear Simples<br/>ΔUso / ΔTempo
+        Calc-->>Plugin: Retorna TimeToFull (ex: 3.5 horas)
+        Plugin->>Main: Retorna Dicionário de Métricas + TTF
+        Main->>SysAdmin: Renderiza na tela "Disk UI (TTF: 3.5h)"
+    end
