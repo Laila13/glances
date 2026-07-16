@@ -26,6 +26,7 @@ sequenceDiagram
         end
     end
 ## 2. Diagrama de Classes
+```mermaid
 Fragmento do código
 classDiagram
     class GlancesCore {
@@ -48,6 +49,7 @@ classDiagram
     GlancesPlugin --> PredictiveEngine : utiliza para predição
     GlancesPlugin --> Psutil : consome métricas do SO
 ## 3. Diagrama de Componentes
+```mermaid
 Fragmento do código
 flowchart TD
     subgraph CLI ["Interface do Usuário (Terminal)"]
