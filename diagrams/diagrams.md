@@ -25,7 +25,7 @@ sequenceDiagram
             Plugin->>Main: Oculta indicador ou exibe "TTF: N/A"
         end
     end
-2. Diagrama de Classes
+## 2. Diagrama de Classes
 Fragmento do código
 classDiagram
     class GlancesCore {
@@ -47,7 +47,7 @@ classDiagram
     GlancesCore --> GlancesPlugin : gerencia
     GlancesPlugin --> PredictiveEngine : utiliza para predição
     GlancesPlugin --> Psutil : consome métricas do SO
-3. Diagrama de Componentes
+## 3. Diagrama de Componentes
 Fragmento do código
 flowchart TD
     subgraph CLI ["Interface do Usuário (Terminal)"]
