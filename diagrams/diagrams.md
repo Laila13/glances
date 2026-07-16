@@ -24,3 +24,45 @@ sequenceDiagram
             Plugin->>Main: Oculta indicador ou exibe "TTF: N/A"
         end
     end
+classDiagram
+    class GlancesCore {
+        +list plugins
+        +run()
+    }
+    class GlancesPlugin {
+        -list history
+        +update()
+        +get_ttf()
+    }
+    class PredictiveEngine {
+        +float calculate_ttf(list history)
+    }
+    class Psutil {
+        +disk_usage(str path)
+    }
+
+    GlancesCore --> GlancesPlugin : gerencia
+    GlancesPlugin --> PredictiveEngine : utiliza para predição
+    GlancesPlugin --> Psutil : consome métricas do SO
+flowchart TD
+    subgraph CLI ["Interface do Usuário (Terminal)"]
+        UI["Painel de Exibição (Glances UI)"]
+    end
+
+    subgraph Core ["Núcleo do Glances"]
+        GC["Glances Core (Engine)"]
+        GP["Glances Disk Plugin"]
+    end
+
+    subgraph MVP ["Módulo Preditivo"]
+        PE["Predictive Engine (predictive_engine.py)"]
+    end
+
+    subgraph SO ["Recursos do Sistema"]
+        PS["Biblioteca psutil (Métricas de Disco)"]
+    end
+
+    UI <--> GC
+    GC --> GP
+    GP --> PE
+    GP --> PS
