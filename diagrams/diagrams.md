@@ -5,7 +5,6 @@
 sequenceDiagram
     autonumber
     actor SysAdmin as Usuário/Terminal
-    private over Main as GlancesCore
     participant Main as GlancesCore
     participant Plugin as DisksPlugin
     participant Calc as PredictiveEngine
@@ -25,9 +24,10 @@ sequenceDiagram
             Plugin->>Main: Oculta indicador ou exibe "TTF: N/A"
         end
     end
+```
+
 ## 2. Diagrama de Classes
 ```mermaid
-Fragmento do código
 classDiagram
     class GlancesCore {
         +list plugins
@@ -48,9 +48,10 @@ classDiagram
     GlancesCore --> GlancesPlugin : gerencia
     GlancesPlugin --> PredictiveEngine : utiliza para predição
     GlancesPlugin --> Psutil : consome métricas do SO
+```
+
 ## 3. Diagrama de Componentes
 ```mermaid
-Fragmento do código
 flowchart TD
     subgraph CLI ["Interface do Usuário (Terminal)"]
         UI["Painel de Exibição (Glances UI)"]
@@ -73,3 +74,4 @@ flowchart TD
     GC --> GP
     GP --> PE
     GP --> PS
+```
